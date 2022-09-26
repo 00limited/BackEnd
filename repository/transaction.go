@@ -32,7 +32,7 @@ func (r *repository) GetTransaction(ID int) (models.Transaction, error) {
 	return transactions, err
 }
 func (r *repository) CreateTransaction(transactions models.Transaction) (models.Transaction, error) {
-	err := r.db.Exec("SET FOREIGN_KEY_CHECKS=0").Preload("User").Create(&transactions).Error
+	err := r.db.Preload("User").Create(&transactions).Error
 
 	return transactions, err
 }
