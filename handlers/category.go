@@ -30,11 +30,11 @@ func (h *handlerCategory) FindAllCategory(w http.ResponseWriter, r *http.Request
 		json.NewEncoder(w).Encode(response)
 	}
 
-	for i, cat := range category {
-		for j, film := range cat.Film {
-			category[i].Film[j].ThumbnailFilm = PathFile + film.ThumbnailFilm
-		}
-	}
+	// for i, cat := range category {
+	// 	for j, film := range cat.Film {
+	// 		category[i].Film[j].ThumbnailFilm = PathFile + film.ThumbnailFilm
+	// 	}
+	// }
 
 	w.WriteHeader(http.StatusOK)
 	response := dto.SuccessResult{Code: http.StatusOK, Data: category}

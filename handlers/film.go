@@ -23,7 +23,7 @@ type handlerFilm struct {
 	FilmRepository repository.FilmRepository
 }
 
-var PathFile = "http://localhost:5000/upload/"
+// var PathFile = "http://localhost:5000/upload/"
 
 func HandlerFilm(FilmRepository repository.FilmRepository) *handlerFilm {
 	return &handlerFilm{FilmRepository}
